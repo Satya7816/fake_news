@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Fake News Prediction</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .ripple-background {
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar {
+      background-color: #343a40;
+    }
+
+    .navbar-brand {
+      color: #fff !important;
+    }
+
+    .navbar-form .btn-outline-primary,
+    .navbar-form .btn-primary {
+      background-color: #6c757d;
+      border-color: #6c757d;
+    }
+
+    .navbar-form .btn-outline-primary:hover,
+    .navbar-form .btn-primary:hover {
+      background-color: #495057;
+      border-color: #495057;
+    }
+
+    .form-control {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    h5 {
+      color: #fff;
+    }
+
+    .btn-primary,
+    .btn-primary:hover {
+      background-color: #007bff;
+      color: #fff;
+      border: 2px solid #007bff;
+    }
+
+    .btn-primary:hover {
+      color: #eae4e4;
+    }
+
+    .btn:hover {
+      color: #fff;
+    }
+  </style>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- icon -->
+  <link rel="icon" href="{{ url_for('static', filename='logo.jpg') }}" />
+</head>
+
+<body>
+  <div class='ripple-background'>
+    <nav class="navbar bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand fs-3 text-light" href="/">Fake News Detection</a>
+        <form class="d-flex navbar-form" role="search">
+          <button class="btn btn-outline-primary text-light me-1 border-light"
+            onclick="window.open('http://127.0.0.1:5502/templates/upload.html', '_blank')" type="submit">Train Your Data
+          </button>
+          <a href="/" class="btn btn-outline-primary text-light me-1 border-light">Back</a>
+        </form>
+      </div>
+    </nav>
+    <br>
+    <h5 style="text-align: center;">Enter your text to try it.</h5>
+    <br>
+    <br>
+    <div class='container float-right'>
+      <form action="/predict" method="POST">
+        <div class="col-three-forth text-center col-md-offset-2">
+          <div class="form-group float-right">
+            <textarea class="form-control border-1 border-dark jTextarea" id="jTextarea" rows="5" name="text"
+              placeholder="Write your text here..." required>{{prediction}}</textarea>
+            <br><br>
+            <button class="btn btn-primary btn-outline btn-md" type="submit" name="predict">Predict</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <br>
+  </div>
+
+  <script>
+    function growTextarea(i, elem) {
+      var elem = $(elem);
+      var resizeTextarea = function (elem) {
+        var scrollLeft = window.pageXOffset || (document.documentElement || document.body.parentNode || document.body).scrollLeft;
+        var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+        elem.css('height', 'auto').css('height', elem.prop('scrollHeight'));
+        window.scrollTo(scrollLeft, scrollTop);
+      };
+      elem.on('input', function () {
+        resizeTextarea($(this));
+      });
+      resizeTextarea($(elem));
+    }
+
+    $('.jTextarea').each(growTextarea)

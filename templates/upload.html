@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url(https://img.freepik.com/premium-photo/dark-wall-halloween-background-concept-scary-background-horror-texture-banner_526818-720.jpg?size=626&ext=jpg&ga=GA1.1.87170709.1707523200&semt=ais);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff; /* Primary blue color */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        #trainingMessage {
+            margin-top: 20px;
+            text-align: center;
+            color: #28a745; /* Green color for success message */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Fake News Detection</h1>
+
+        <div>
+            <label for="fakeDataset">Upload Fake Dataset:</label>
+            <input type="file" id="fakeDataset" accept=".csv, .txt">
+        </div>
+
+        <div>
+            <label for="trueDataset">Upload True Dataset:</label>
+            <input type="file" id="trueDataset" accept=".csv, .txt">
+        </div>
+
+        <button onclick="trainFakeDataset()">Train Fake Dataset</button>
+        <button onclick="trainTrueDataset()">Train True Dataset</button>
+
+        <p id="trainingMessage"></p>
+    </div>
+
+    <script>
+        function trainFakeDataset() {
+            var fileInput = document.getElementById('fakeDataset');
+            var file = fileInput.files[0];
+
+            if (!file) {
+                alert("Please select a file.");
+                return;
+            }
+
+            // Read the uploaded file
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                var contents = event.target.result;
+                var lines = contents.split('\n');
+
+                // Check if the file contains the required columns
+                if (!lines[0].toLowerCase().includes('title') ||
+                    !lines[0].toLowerCase().includes('text') ||
+                    !lines[0].toLowerCase().includes('subject') ||
+                    !lines[0].toLowerCase().includes('date')) {
+                    alert("Fake dataset not in the proper format. Please ensure it contains columns titled 'title', 'text', 'subject', and 'date'.");
+                    return;
+                }
+
+                // Simulate uploading fake dataset
+                // Replace this with actual code to handle file upload
+                setTimeout(function () {
+                    document.getElementById("trainingMessage").innerText = "Fake dataset successfully uploaded.";
+                }, 2000); // Simulate 2 seconds of upload time
+            };
+            reader.readAsText(file);
+        }
+
+        function trainTrueDataset() {
+            var fileInput = document.getElementById('trueDataset');
+            var file = fileInput.files[0];
+
+            if (!file) {
+                alert("Please select a file.");
+                return;
+            }
+
+            // Read the uploaded file
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                var contents = event.target.result;
+                var lines = contents.split('\n');
+
+                // Check if the file contains the required columns
+                if (!lines[0].toLowerCase().includes('title') ||
+                    !lines[0].toLowerCase().includes('text') ||
+                    !lines[0].toLowerCase().includes('subject') ||
+                    !lines[0].toLowerCase().includes('date')) {
+                    alert("True dataset not in the proper format. Please ensure it contains columns titled 'title', 'text', 'subject', and 'date'.");
+                    return;
+                }
+
+                // Simulate uploading true dataset
+                // Replace this with actual code to handle file upload
+                setTimeout(function () {
+                    document.getElementById("trainingMessage").innerText = "True dataset successfully uploaded.";
+                }, 2000); // Simulate 2 seconds of upload time
+            };
+            reader.readAsText(file);
+        }
+    </script>
+
+</body>
+
+</html>

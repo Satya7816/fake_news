@@ -1,0 +1,41 @@
+body {
+    background-image: url('static/background.avif');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .ripple-background {
+    padding: 20px;
+    border-radius: 10px;
+    background: #d15b5b;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+  }
+  
+  .shadow-textarea textarea.form-control {
+    padding-left: 0.8rem;
+  }
+  
+  /* Style for buttons */
+  .btn-outline-primary,
+  .btn-outline-primary:hover,
+  .btn-primary,
+  .btn-primary:hover {
+    color: #007bff;
+    border-color: #007bff;
+    background-color: transparent;
+  }
+  
+  .btn-outline-primary:hover,
+  .btn-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  

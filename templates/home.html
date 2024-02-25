@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection Showcase</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/CSS/style.css">
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/originals/2d/44/e9/2d44e965dff94b7aa7a51fb42f25faf8.gif'); /* Add the path to your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #f8f9fa;
+            color: #333; /* Set text color to a readable contrast */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .feature,
+        .dataset,
+        .workflow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .feature img,
+        .dataset img,
+        .workflow-step img,
+        .demo-images img {
+            width: 150px; /* Set the width as needed */
+            height: 150px; /* Set the height as needed */
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .demo-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="bg-dark text-white text-center py-5">
+        <h1>FAKE NEWS DETECTION</h1>
+    </header>
+
+    <section class="container my-5">
+        <p class="lead">Our Fake News Detection System is a robust solution designed to identify and categorize news articles as either fake or genuine using Natural Language Processing (NLP) techniques. In an era where misinformation can spread rapidly, this system aims to contribute to the effort of ensuring the authenticity and reliability of news sources.</p>
+
+        <div class="team-details card my-4">
+            <div class="card-body">
+                <h2 class="card-title">Team Details</h2>
+                <h3 class="card-subtitle mb-2 text-muted">Fake News Detection Application by Btech 3rd Year students from CAI</h3>
+                <a href="http://127.0.0.1:5500/" class="btn btn-primary btn-lg">GET DETAILS</a>
+            </div>
+        </div>
+
+        <div class="key-features">
+            <h2>Key Features:</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="feature">
+                        <img src="static/NLP-tasks.jpg" alt="NLP IMG" class="card-img-top">
+                        <h5 class="card-title">NLP-powered Analysis</h5>
+                        <p class="card-text">The system utilizes advanced NLP algorithms to analyze the textual content of news articles. This involves the extraction of semantic features, sentiment analysis, and language patterns to distinguish between authentic and potentially deceptive news.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature">
+                        <img src="static/pandas.jpg" alt="Pandas Icon" class="card-img-top">
+                        <h5 class="card-title">Pandas for Data Handling</h5>
+                        <p class="card-text">We leverage the Pandas library for efficient handling and manipulation of datasets. Pandas provides a convenient and flexible framework for preprocessing and organizing the data, allowing us to streamline the analysis process.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature">
+                        <img src="static/flask-icon.png" alt="Flask Icon" class="card-img-top">
+                        <h5 class="card-title">Integration with Flask</h5>
+                        <p class="card-text">Our system is integrated with Flask, a web framework in Python. Flask allows us to create a user-friendly web interface for interacting with the Fake News Detection System.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature">
+                        <img src="static/scikit-learn-icon.png" alt="Scikit-Learn Icon" class="card-img-top">
+                        <h5 class="card-title">Scikit-Learn for Machine Learning</h5>
+                        <p class="card-text">We employ Scikit-Learn, a machine learning library in Python, for training and evaluating the classification model. Scikit-Learn provides a wide range of tools for machine learning tasks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="datasets-table card my-4">
+            <div class="card-body">
+                <h2 class="card-title">Datasets:</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="dataset">
+                            <img src="static/fake-news-dataset-icon.png" alt="Fake News Dataset Icon">
+                            <p><strong>Fake News Dataset:</strong> The system is trained on a dataset containing examples of news articles that have been identified as fake. This dataset includes a diverse range of deceptive articles, covering various topics and writing styles commonly associated with misinformation.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="dataset">
+                            <img src="static/true-news-dataset-icon.png" alt="True News Dataset Icon">
+                            <p><strong>True News Dataset:</strong> Similarly, the system is trained on a dataset comprising authentic news articles. This dataset serves as a benchmark for the model, helping it learn the characteristics of legitimate news sources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="workflow card my-4">
+            <div class="card-body">
+                <h2 class="card-title">Workflow:</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="workflow-step">
+                            <img src="static/data-preprocessing-icon.png" alt="Data Preprocessing Icon">
+                            <h5 class="card-title">Data Preprocessing</h5>
+                            <p class="card-text">The news articles are preprocessed using Pandas, which involves tasks such as handling missing data, text cleaning, and feature extraction. This step ensures that the data is in a suitable format for NLP analysis.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="workflow-step">
+                            <img src="static/nlp-analysis-icon.png" alt="NLP Analysis Icon">
+                            <h5 class="card-title">NLP Analysis</h5>
+                            <p class="card-text">The NLP algorithms are applied to extract meaningful insights from the text. This includes tokenization, part-of-speech tagging, and sentiment analysis to capture the linguistic nuances indicative of fake or genuine news.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="workflow-step">
+                            <img src="static/model-training-icon.png" alt="Model Training Icon">
+                            <h5 class="card-title">Model Training</h5>
+                            <p class="card-text">The processed data is used to train a machine learning model. This model learns to recognize patterns and features associated with fake and true news articles, enabling it to make accurate predictions on unseen data.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="workflow-step">
+                            <img src="static/evaluation-icon.png" alt="Evaluation and Validation Icon">
+                            <h5 class="card-title">Evaluation and Validation</h5>
+                            <p class="card-text">The model's performance is evaluated using metrics such as accuracy, precision, recall, and F1 score. Rigorous validation ensures the reliability and effectiveness of the Fake News Detection System.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="conclusion card my-4">
+            <div class="card-body">
+                <h2 class="card-title">Conclusion:</h2>
+                <p class="card-text">Our Fake News Detection System is a vital tool in the fight against misinformation. By harnessing the power of NLP, Pandas, and machine learning, we aim to provide users with a trustworthy solution to assess the credibility of news articles, fostering a more informed and vigilant society.</p>
+            </div>
+        </div>
+
+        <div class="demo-images card my-4">
+            <div class="card-body">
+                <img src="static/demoimg2.png" alt="Project Demo Image 1" class="img-fluid">
+                <img src="static/demoimg1.png" alt="Project Demo Image 2" class="img-fluid">
+                <!-- Add more demo images as needed -->
+            </div>
+        </div>
+
+        <div class="buttons card my-4">
+            <a href="https://github.com/" class="btn btn-github btn-lg">GitHub Repository</a>
+            <a href="/a" class="btn btn-demo btn-lg">View Project</a>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

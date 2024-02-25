@@ -1,0 +1,67 @@
+/* Reset default margin and padding */
+body, h1, label, input, button, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set background color and font */
+  body {
+    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Center the content */
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the header */
+  h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Style the file input */
+  input[type="file"] {
+    display: none;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #666;
+    font-size: 18px;
+  }
+  
+  /* Style the buttons */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style the training message */
+  p#trainingMessage {
+    margin-top: 20px;
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+  }
